@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Wave Function</title>
+<!-- load inconsolata font-->
+
+<script type="module">
+import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
+const lightbox = new PhotoSwipeLightbox({
+  gallery: '#my-gallery',
+  children: 'a',
+  pswpModule: () => import('photoswipe/dist/photoswipe.esm.js')
+});
+lightbox.init();
+</script>
+
+<style type="text/css">
+	@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+	
+	@media (max-width: 500px) {
+		.container.container {
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(5, 1fr);
+			grid-template-areas: "header" "biomusic" "photos" "youtube" "footer";
+
+		}
+	}
+
+	@media (min-width: 500px) {
+		.container.container {
+		display: grid;
+		grid-template-columns: 2fr 3fr;
+      	grid-template-rows: 1fr 7fr 4fr 0.1fr; 
+     	gap: 0px 0px;
+		grid-template-areas: "header header"	"biomusic photos"	"youtube youtube"	"footer footer";
+		background-image: url("CheckerBG.jpg");
+		background-attachment: fixed;
+		margin: 0px;
+		padding: 0px;
+		color: white;
+		}
+	}
+	* {
+		font-family: "Inconsolata", sans-serif;
+		margin: 0;
+		padding: 0;
+	}
+h2 {
+	font-weight: 900;
+	margin-bottom: 5px;
+}
+p {
+font-size: 20px;
+	margin-bottom: 20px;
+}
+	.container > div {
+		padding: 10px;
+
+	}
+	.container > div.header {
+		grid-area: header ;
+	}
+	.container > div.biomusic {
+		grid-area: biomusic;
+		min-width: 500px;
+		margin-left: 20px;
+		border-radius: 15px;
+	}
+
+	.container >div.photos {
+		grid-area: photos;
+		padding: 0px;
+		float: left;
+		clear: none;
+	}
+
+	.photos > img {
+		padding: 5px;
+	}
+
+	.container > div.youtube {
+		grid-area: youtube;
+		position: relative;
+		display: block;
+		width: 90%; /* width of iframe wrapper */
+		height: 0;
+		margin: auto;
+		padding: 0% 0% 56.25%; /* 16:9 ratio */
+		overflow: hidden;
+	}
+
+	.container > div.footer {
+		grid-area: footer;
+		min-height: 200px;
+	}
+
+	.header > img {
+		width: 100%;
+		max-width: 700px;
+	}
+
+
+</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header"><img src="siteheader.png" ></div>
+			<div class="biomusic"><h2>About us</h2><p>Seattle-based punk quintet Wave Function formed in early 2023 with little more than a dream to play great alternative music. The 5 have since developed a nostalgia-soaked sound, beckoning the return of everything from 2000s emo and pop punk,  to 2000s indie and alt rock. Their first release, Collapse is streaming now on all platforms</p><iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/2VRg9bzYQb1HdVNMHP0Yht?utm_source=generator&theme=0" width="100%" height="400" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div>
+		<div class="photos">
+			<img src="bluemoon5.jpg" height="400px" alt="Band performing at bar">
+			<img src="kraken9.jpg" height="400px" alt="woman singing into microphone">
+			<img src="KrakenKohl.jpg" height="400px" alt="Band on stage">
+			<img src="Blue Moon-52.jpg" height="400px" alt="band on stage black and white">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+			<img src="" height="400px" alt="">
+
+
+		</div>
+		<div class="youtube"><iframe width="2160" height="1080" src="https://www.youtube.com/embed/8jS4BRXxXy8?si=cWlg09CuHK50wAyP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+	</div>
+</body>
+
+</html>
